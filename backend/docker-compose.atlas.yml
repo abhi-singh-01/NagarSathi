@@ -1,0 +1,17 @@
+# API only — use your MongoDB Atlas URI from .env (no local Mongo container)
+# Usage: docker compose -f docker-compose.atlas.yml up --build
+
+services:
+  api:
+    build: .
+    container_name: nagarsathi-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - uploads_data:/app/uploads
+
+volumes:
+  uploads_data:

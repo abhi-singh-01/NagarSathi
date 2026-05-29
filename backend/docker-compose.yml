@@ -1,0 +1,43 @@
+# Local full stack: API + MongoDB (for contributors & testing)
+# Usage: docker compose up --build
+# API: http://localhost:3000/health
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: nagarsathi-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: nagarsathi-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      MONGODB_URI: mongodb://mongo:27017/nagarsathi
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-min-32-chars}
+      JWT_EXPIRES_IN: 7d
+      BASE_URL: http://localhost:3000
+      CORS_ORIGIN: "*"
+      MAX_FILE_SIZE_MB: 5
+    volumes:
+      - uploads_data:/app/uploads
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+volumes:
+  mongo_data:
+  uploads_data:

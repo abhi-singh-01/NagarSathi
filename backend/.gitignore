@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+
+# Environment & secrets (never commit)
+.env
+.env.*
+!.env.example
+
+# User uploads (keep folder only)
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keys
+*.pem
+*.key
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# AI & agent tooling
+.claude/
+.cursor/
+.agents/
+AGENTS.md
+CLAUDE.md
+.cursorrules
+*.cursorrules
+
+# Internal docs
+docs/
