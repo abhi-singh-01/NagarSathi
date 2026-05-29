@@ -51,7 +51,7 @@ app-example
 /ios
 /android
 
-# AI / editor tooling (keep repo clean for contributors)
+# AI / editor tooling — never push to GitHub
 .claude/
 .cursor/
 .agents/
@@ -60,3 +60,4 @@ CLAUDE.md
 .cursorrules
 *.cursorrules
 docs/OPEN_SOURCE.md
+CONTRIBUTING.md
