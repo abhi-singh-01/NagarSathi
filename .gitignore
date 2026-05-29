@@ -1,57 +1,53 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# Dependencies
 node_modules/
 
-# Expo
+# Expo / React Native
 .expo/
 dist/
 web-build/
 expo-env.d.ts
-
-# Native
+/ios
+/android
 .kotlin/
 *.orig.*
 *.jks
 *.p8
 *.p12
-*.key
 *.mobileprovision
 
 # Metro
 .metro-health-check*
 
-# debug
+# Logs & debug
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+*.log
 
-# macOS
+# OS
 .DS_Store
-*.pem
+Thumbs.db
 
-# local env files — never commit secrets
+# Environment & secrets (never commit)
 .env
 .env.*
 !.env.example
-.env*.local
 
-# secrets & keys
+# Keys & service files
 *.pem
-*.key
 google-services.json
 GoogleService-Info.plist
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 
-app-example
+# Editor / IDE (local only)
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# generated native folders
-/ios
-/android
-
-# AI / editor tooling — never push to GitHub
+# AI & agent tooling (never commit)
 .claude/
 .cursor/
 .agents/
@@ -59,5 +55,12 @@ AGENTS.md
 CLAUDE.md
 .cursorrules
 *.cursorrules
-docs/OPEN_SOURCE.md
-CONTRIBUTING.md
+**/OPEN_SOURCE.md
+
+# Extra markdown (keep README, CONTRIBUTING, SECURITY in repo)
+docs/
+
+# Uploads & generated
+app-example
+uploads/*
+!uploads/.gitkeep

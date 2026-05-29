@@ -5,7 +5,9 @@
 
 Open-source **React Native Expo** civic complaint app for India. Citizens report potholes, garbage, broken streetlights, water leaks, and sewage issues with photo evidence and precise GPS — then track resolution status on a map.
 
-> **Backend API** (Express + MongoDB): see the `nagarsathi-backend` folder in this monorepo or a separate API repository.
+> **Backend API:** [NagarSathi-API](https://github.com/abhi-singh-01/NagarSathi-API) — Express + MongoDB + Docker
+
+🤝 [Contributing](CONTRIBUTING.md) — fork, PR, and maintainer review before merge.
 
 ## Features
 
